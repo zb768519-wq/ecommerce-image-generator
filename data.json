@@ -1,0 +1,202 @@
+{
+  "platform": "TikTok Shop / Temu / Amazon",
+  "targetMarket": "United States",
+  "product": {
+    "name": "Anti Slip Soccer Grip Socks",
+    "image": "./assets/product.png",
+    "quantity": "9 Pairs",
+    "color": "Black & White",
+    "material": "Breathable Cotton Blend",
+    "size": "One Size Fits Most"
+  },
+  "hero": {
+    "headline": "Maximum Grip. Unmatched Comfort.",
+    "subheadline": "Anti-slip athletic socks designed for soccer, gym, running and daily training."
+  },
+  "coreFeatures": [
+    {
+      "icon": "⚡",
+      "text": "Anti-Slip Grip"
+    },
+    {
+      "icon": "☁️",
+      "text": "Cushioned Comfort"
+    },
+    {
+      "icon": "💨",
+      "text": "Breathable Fabric"
+    },
+    {
+      "icon": "💧",
+      "text": "Moisture Wicking"
+    }
+  ],
+  "sections": {
+    "feature": {
+      "kicker": "Core Benefits",
+      "title": "Built for Better Movement",
+      "subtitle": "Designed to help active users stay stable, comfortable and ready for every training session.",
+      "points": [
+        {
+          "icon": "🦶",
+          "title": "Grip Bottom",
+          "desc": "Helps reduce unwanted sliding inside shoes during quick moves."
+        },
+        {
+          "icon": "🛡️",
+          "title": "Cushioned Sole",
+          "desc": "Adds comfort during long training, sports and daily wear."
+        },
+        {
+          "icon": "🌬️",
+          "title": "Breathable Feel",
+          "desc": "Helps keep feet cool and dry during workouts."
+        }
+      ]
+    },
+    "pain": {
+      "title": "Tired of Slipping?",
+      "subtitle": "Ordinary socks may not be enough for intense movement.",
+      "problems": [
+        "Feet slide inside shoes",
+        "Less control during quick turns",
+        "Thin socks feel uncomfortable",
+        "Sweaty feet during training"
+      ],
+      "solutionTitle": "Upgrade Your Socks",
+      "solutionText": "Grip bottom, cushioned support and breathable comfort for sports and daily use."
+    },
+    "detail": {
+      "kicker": "Product Details",
+      "title": "Designed with Details That Matter",
+      "subtitle": "Every part is made for comfort, grip and everyday performance.",
+      "details": [
+        {
+          "icon": "🔘",
+          "title": "Grip Dots",
+          "desc": "Anti-slip sole design for better traction."
+        },
+        {
+          "icon": "🧵",
+          "title": "Soft Fabric",
+          "desc": "Comfortable texture for long wear."
+        },
+        {
+          "icon": "🦶",
+          "title": "Arch Support",
+          "desc": "Designed to fit active feet comfortably."
+        },
+        {
+          "icon": "💦",
+          "title": "Dry Feel",
+          "desc": "Breathable material helps reduce sweaty discomfort."
+        }
+      ]
+    },
+    "scenes": {
+      "kicker": "Multi-Scene Use",
+      "title": "Ready for Every Move",
+      "subtitle": "One sock set for sports, workouts and everyday active lifestyles.",
+      "items": [
+        {
+          "icon": "⚽",
+          "title": "Soccer",
+          "desc": "For footwork, sprinting and training."
+        },
+        {
+          "icon": "🏋️",
+          "title": "Gym",
+          "desc": "Great for workouts and strength training."
+        },
+        {
+          "icon": "🏃",
+          "title": "Running",
+          "desc": "Comfortable for daily runs and exercise."
+        },
+        {
+          "icon": "🏀",
+          "title": "Basketball",
+          "desc": "Useful for fast movement and quick stops."
+        },
+        {
+          "icon": "🧘",
+          "title": "Yoga",
+          "desc": "Anti-slip bottom for indoor workouts."
+        },
+        {
+          "icon": "👟",
+          "title": "Daily Wear",
+          "desc": "Comfortable enough for everyday use."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "Why Choose Us",
+      "title": "Ordinary Socks vs Grip Socks",
+      "subtitle": "Clear advantages for training, sports and daily comfort.",
+      "rows": [
+        {
+          "before": "Easy to slip",
+          "after": "Anti-slip grip bottom"
+        },
+        {
+          "before": "Basic comfort",
+          "after": "Cushioned support"
+        },
+        {
+          "before": "Gets sweaty fast",
+          "after": "Breathable fabric"
+        },
+        {
+          "before": "Limited use",
+          "after": "Multi-sport design"
+        },
+        {
+          "before": "Single pair value",
+          "after": "Value pack for daily rotation"
+        }
+      ]
+    },
+    "specs": {
+      "kicker": "Specifications",
+      "title": "Product Information",
+      "subtitle": "Simple, practical and made for active daily use.",
+      "items": [
+        {
+          "label": "Product",
+          "value": "Soccer Grip Socks"
+        },
+        {
+          "label": "Quantity",
+          "value": "9 Pairs"
+        },
+        {
+          "label": "Color",
+          "value": "Black & White"
+        },
+        {
+          "label": "Material",
+          "value": "Cotton Blend"
+        },
+        {
+          "label": "Use",
+          "value": "Sports & Daily Wear"
+        },
+        {
+          "label": "Target User",
+          "value": "Men & Women"
+        }
+      ]
+    },
+    "bundle": {
+      "title": "9 Pairs Value Pack",
+      "subtitle": "Enough for training, travel, replacement and daily rotation.",
+      "badge": "More Pairs. More Value.",
+      "repeat": 9
+    },
+    "cta": {
+      "title": "Upgrade Your Training Essentials",
+      "subtitle": "Grip, comfort and breathable performance in one value pack."
+    }
+  }
+}
