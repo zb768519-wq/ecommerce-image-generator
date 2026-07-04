@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Main Image Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main id="app"></main>
+
+  <script>
+    async function loadData() {
+      const response = await fetch("./data.json");
+      const data = await response.json();
+      renderPage(data);
+    }
+
+    function featureBadges(features) {
+      return features.map(item => `
+        <div class="feature-badge">
+          <div class="feature-icon">${item.icon}</div>
+          <div class="feature-text">${item.text}</div>
+        </div>
+      `).join("");
+    }
+
+    function sceneCards(scenes) {
+      return scenes.map(scene => `
+        <div class="scene-card">
+          <div class="scene-icon">${scene.icon}</div>
+          <h3>${scene.title}</h3>
+          <p>${scene.desc}</p>
+        </div>
+      `).join("");
+    }
+
+    function comparisonRows(rows) {
+      return rows.map(row => `
+        <div class="comparison-row">
+          <div class="bad">${row.before}</div>
+          <div class="good">${row.after}</div>
+        </div>
+      `).join("");
+    }
+
+    function specRows(specs) {
+      return specs.map(spec => `
+        <div class="spec-row">
+          <span>${spec.label}</span>
+          <strong>${spec.value}</strong>
+        </div>
+      `).join("");
+    }
+
+    function renderPage(data) {
+      const app = document.getElementById("app");
+
+      app.innerHTML = `
+        <!-- 1. Hero Main Image -->
+        <section class="image-section hero-section">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="tag">${data.platform} · ${data.targetMarket}</div>
+              <h1>${data.hero.headline}</h1>
+              <p>${data.hero.subheadline}</p>
+              <div class="hero-features">
+                ${featureBadges(data.coreFeatures)}
+              </div>
+            </div>
+
+            <div class="hero-product-wrap">
+              <div class="circle-bg"></div>
+              <img class="product-img hero-product" src="${data.product.image}" alt="${data.product.name}" />
+              <div class="quantity-badge">${data.product.quantity}</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Core Feature Image -->
+        <section class="image-section feature-section">
+          <div class="section-title">
+            <span>${data.sections.feature.kicker}</span>
+            <h2>${data.sections.feature.title}</h2>
+            <p>${data.sections.feature.subtitle}</p>
+          </div>
+
+          <div class="feature-layout">
+            <div class="feature-list">
+              ${data.sections.feature.points.map(point => `
+                <div class="feature-point">
+                  <div class="point-icon">${point.icon}</div>
+                  <div>
+                    <h3>${point.title}</h3>
+                    <p>${point.desc}</p>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+
+            <div class="product-card">
+              <img src="${data.product.image}" alt="${data.product.name}" />
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Pain Point Image -->
+        <section class="image-section pain-section">
+          <div class="split-layout">
+            <div class="pain-card">
+              <h2>${data.sections.pain.title}</h2>
+              <p>${data.sections.pain.subtitle}</p>
+              <ul>
+                ${data.sections.pain.problems.map(item => `<li>${item}</li>`).join("")}
+              </ul>
+            </div>
+
+            <div class="solution-card">
+              <h2>${data.sections.pain.solutionTitle}</h2>
+              <p>${data.sections.pain.solutionText}</p>
+              <img src="${data.product.image}" alt="${data.product.name}" />
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Detail Image -->
+        <section class="image-section detail-section">
+          <div class="section-title light">
+            <span>${data.sections.detail.kicker}</span>
+            <h2>${data.sections.detail.title}</h2>
+            <p>${data.sections.detail.subtitle}</p>
+          </div>
+
+          <div class="detail-grid">
+            ${data.sections.detail.details.map(item => `
+              <div class="detail-card">
+                <div class="detail-icon">${item.icon}</div>
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+              </div>
+            `).join("")}
+          </div>
+
+          <img class="detail-product" src="${data.product.image}" alt="${data.product.name}" />
+        </section>
+
+        <!-- 5. Usage Scenes -->
+        <section class="image-section scenes-section">
+          <div class="section-title">
+            <span>${data.sections.scenes.kicker}</span>
+            <h2>${data.sections.scenes.title}</h2>
+            <p>${data.sections.scenes.subtitle}</p>
+          </div>
+
+          <div class="scene-grid">
+            ${sceneCards(data.sections.scenes.items)}
+          </div>
+        </section>
+
+        <!-- 6. Comparison Image -->
+        <section class="image-section comparison-section">
+          <div class="section-title">
+            <span>${data.sections.comparison.kicker}</span>
+            <h2>${data.sections.comparison.title}</h2>
+            <p>${data.sections.comparison.subtitle}</p>
+          </div>
+
+          <div class="comparison-table">
+            <div class="comparison-header">
+              <div>Ordinary Product</div>
+              <div>Our Product</div>
+            </div>
+            ${comparisonRows(data.sections.comparison.rows)}
+          </div>
+        </section>
+
+        <!-- 7. Specs Image -->
+        <section class="image-section specs-section">
+          <div class="specs-card">
+            <div>
+              <span class="kicker">${data.sections.specs.kicker}</span>
+              <h2>${data.sections.specs.title}</h2>
+              <p>${data.sections.specs.subtitle}</p>
+              <div class="spec-table">
+                ${specRows(data.sections.specs.items)}
+              </div>
+            </div>
+
+            <img src="${data.product.image}" alt="${data.product.name}" />
+          </div>
+        </section>
+
+        <!-- 8. Bundle Value Image -->
+        <section class="image-section bundle-section">
+          <div class="bundle-content">
+            <h2>${data.sections.bundle.title}</h2>
+            <p>${data.sections.bundle.subtitle}</p>
+
+            <div class="bundle-products">
+              ${Array.from({ length: data.sections.bundle.repeat }).map(() => `
+                <img src="${data.product.image}" alt="${data.product.name}" />
+              `).join("")}
+            </div>
+
+            <div class="bundle-badge">${data.sections.bundle.badge}</div>
+          </div>
+        </section>
+
+        <!-- 9. CTA Image -->
+        <section class="image-section cta-section">
+          <div class="cta-content">
+            <h2>${data.sections.cta.title}</h2>
+            <p>${data.sections.cta.subtitle}</p>
+            <div class="cta-features">
+              ${featureBadges(data.coreFeatures)}
+            </div>
+            <img src="${data.product.image}" alt="${data.product.name}" />
+          </div>
+        </section>
+      `;
+    }
+
+    loadData();
+  </script>
+
+</body>
+</html>      
